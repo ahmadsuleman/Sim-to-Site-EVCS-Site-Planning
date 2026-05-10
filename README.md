@@ -1,4 +1,4 @@
-# EVCS Sim-to-Real Planning Suite
+# EVCS Sim-to-Real Planning Framework 
 
 <p align="center">
   <img src="intro.png" alt="Sim-to-Site city-scale EVCS planning banner" width="100%">
