@@ -1,6 +1,16 @@
 # EVCS Sim-to-Real Planning Suite
 
 <p align="center">
+  <img src="intro.png" alt="Sim-to-Site city-scale EVCS planning banner" width="100%">
+</p>
+
+<h1 align="center">Sim-to-Site</h1>
+
+<p align="center">
+  <b>A Data-Fidelity-Aware Sim-to-Real Planning Framework for Graph-Based EVCS Placement</b>
+</p>
+
+<p align="center">
   <b>Graph-structured EV charging dataset generation, validation, ranking, and optimization for city-scale infrastructure planning.</b>
 </p>
 
@@ -19,6 +29,7 @@
   <a href="#outputs">Outputs</a> ·
   <a href="#reproducibility">Reproducibility</a>
 </p>
+
 
 ---
 
