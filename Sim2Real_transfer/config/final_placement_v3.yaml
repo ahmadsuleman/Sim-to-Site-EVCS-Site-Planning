@@ -1,0 +1,91 @@
+# Distribution-aware final EVCS placement configuration with demand-service map layers
+# Use this file with final_placement_v3.py
+
+seed: 42
+
+final_placement:
+  # Number of final EVCS sites to select.
+  k: 10
+
+  # Use all ranked candidates available for the selected method and shortlist size.
+  candidate_pool: all
+
+  # Preferred ranking method order. The script uses the first available method for each city.
+  preferred_methods:
+    - M5_synthetic_to_hybrid_topM_milp
+    - M4_hybrid_ranker_topM_milp
+    - M1_kpi_topM_milp
+
+  # Prefer larger shortlist exports because they provide wider geographic choice.
+  preferred_shortlist_sizes: [60, 40, 20]
+
+  # Final inference score.
+  weights:
+    rank_score: 0.40
+    local_demand_score: 0.25
+    suitability_score: 0.15
+    cost_efficiency: 0.10
+    underserved_or_equity: 0.10
+
+  # City-zone grid used for distribution-aware placement.
+  grid_rows: 5
+  grid_cols: 5
+
+  # For K=10, 0.70 means target at least 7 active zones when feasible.
+  min_active_zones_fraction_of_k: 0.70
+  max_per_zone: 1
+
+  # Minimum pairwise distance between final sites.
+  min_separation_km: 10.00
+  min_separation_relaxation: [2.00, 1.50, 1.25, 1.00, 0.75, 0.50]
+
+  # Ranking exports may not include lat/lon, so merge coordinates from candidate_sites*.csv.
+  merge_coordinates_from_candidate_sites: true
+
+  # Local demand kernel radius for final ranking score.
+  local_demand_radius_km: 10.0
+
+  # Demand-service classification for final map.
+  # This is used for visualization and final inference diagnostics.
+  # If you have graph shortest-path service assignments, use those in the paper;
+  # this map layer uses geographic distance from demand nodes to selected final sites.
+  demand_service_radius_km: 10.0
+
+  # Underserved demand detection.
+  # If the demand file has an explicit underserved flag, the script uses it.
+  # Otherwise it uses a proxy score/quantile fallback.
+  underserved_quantile: 0.75
+
+  plots:
+    dpi: 300
+    figure_format: [png, pdf]
+
+    # Candidate layers.
+    show_top_ranked_candidates: 40
+    show_all_candidates: true
+
+    # Demand layers.
+    show_demand_nodes: true
+    show_served_demand: true
+    show_unserved_demand: true
+    show_underserved_demand: true
+    max_demand_points_on_map: 6000
+    demand_marker_size: 10
+    underserved_marker_size: 22
+    demand_alpha: 0.35
+    underserved_alpha: 0.75
+
+    # Draw the road graph from graph_nodes*.csv and graph_edges*.csv.
+    draw_road_graph: true
+    max_edges_on_map: 15000
+    road_alpha: 0.20
+    road_linewidth: 0.30
+
+    # Optional OSM basemap. Requires: pip install contextily xyzservices
+    # If unavailable or offline, the script falls back to the simulator road graph.
+    # For reproducible paper figures, false is recommended.
+    use_basemap: false
+    basemap_provider: OpenStreetMap.Mapnik
+
+    # Map padding around candidate/demand extent.
+    map_padding_fraction: 0.04

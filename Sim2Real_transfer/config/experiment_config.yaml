@@ -1,0 +1,83 @@
+# Fixed-seed simulator-to-real EVCS siting experiment
+seed: 42
+
+input:
+  required_modes: [synthetic, hybrid, real]
+  allow_single_city_pilot: true
+
+optimization:
+  k: 10
+  radius_km: 5.0
+  distance_metric: length_m      # length_m or travel_time_min
+  coverage_weight: 1.0
+  suitability_weight: 0.5
+  cost_weight: 0.25
+  use_capacity: true
+  solver: scipy_milp             # scipy_milp or greedy
+  time_limit_seconds: 120
+  mip_gap: 0.03
+  fallback_to_greedy: true
+
+station_standard:
+  ports_per_station: 4
+  power_kw_per_port: 150.0
+  uptime_factor: 0.97
+
+capacity:
+  mode: hybrid                   # constant, road_based, land_based, hybrid
+  base_fraction_of_total_demand: 0.12
+  min_fraction_of_total_demand: 0.03
+  max_fraction_of_total_demand: 0.25
+  sensitivity_multipliers: [0.75, 1.0, 1.25]
+
+scoring:
+  positive_features:
+    demand_capture: 0.25
+    coverage_gain: 0.15
+    accessibility_benefit: 0.15
+    grid_feasibility: 0.15
+    land_feasibility: 0.10
+    cost_efficiency: 0.10
+    equity_benefit: 0.10
+  negative_features:
+    competition_penalty: 0.05
+  cost_columns_priority: [land_cost_proxy, cost_proxy]
+
+transfer:
+  shortlist_sizes: [20, 40, 60]
+  target_column: oracle_assigned_demand
+  ranker: hist_gradient_boosting
+  synthetic_weight_for_transfer: 0.5
+  hybrid_residual_weight: 1.0
+  direct_topk_comparison: true
+
+baselines:
+  random_repeats: 3
+  include_greedy_graph: true
+  include_kpi: true
+
+sensitivity:
+  enabled: true
+  k_values: [5, 10, 20]
+  radius_values_km: [3.0, 5.0, 8.0]
+  capacity_multipliers: [0.75, 1.0, 1.25]
+  weight_pairs:
+    - [0.0, 0.25]
+    - [0.5, 0.25]
+    - [1.0, 0.25]
+    - [0.5, 0.0]
+    - [0.5, 0.5]
+  methods: [oracle, kpi_topM_milp, synthetic_to_hybrid_topM_milp]
+  shortlist_size_for_sensitivity: 40
+
+candidate_distribution:
+  grid_size: 5
+  center_method: mean_coordinates
+  entropy_bins: 5
+
+plots:
+  dpi: 300
+  figure_format: [png, pdf]
+  max_edges_on_map: 10000
+  max_demand_points_on_map: 5000
+  default_figsize: [8, 5]

@@ -1,0 +1,65 @@
+# Actual-placement map configuration
+# This script does NOT optimize or reselect sites.
+# It visualizes placements already produced by the analysis, usually T8_final_selected_sites.csv.
+
+seed: 42
+
+actual_placement_map:
+  # Preferred method order. The script uses the first method available in T8 for each city.
+  preferred_methods:
+    - M5_synthetic_to_hybrid_topM_milp
+    - M4_hybrid_ranker_topM_milp
+    - M1_kpi_topM_milp
+    - M6_full_real_oracle
+
+  # Prefer the largest shortlist result because it is usually the final reported setting.
+  preferred_shortlist_sizes: [60, 40, 20]
+
+  # Number of sites expected per city/method.
+  # The script does not enforce this, it only reports if the selected count differs.
+  expected_k: 10
+
+  # Demand-service visualization radius.
+  # This is for map diagnostics. If you have exact MILP assignment files, use them for formal metrics.
+  demand_service_radius_km: 10.0
+
+  # Underserved detection.
+  # If demand file has an explicit underserved flag, it is used.
+  # Otherwise the script tries proxy fields and uses the top quantile.
+  underserved_quantile: 0.75
+
+  plots:
+    dpi: 300
+    figure_format: [png, pdf]
+
+    # Demand layers
+    show_demand_nodes: true
+    show_served_demand: true
+    show_unserved_demand: true
+    show_underserved_demand: true
+    max_demand_points_on_map: 6000
+    demand_marker_size: 10
+    underserved_marker_size: 24
+    demand_alpha: 0.35
+    underserved_alpha: 0.85
+
+    # Candidate context
+    show_all_candidates: true
+    candidate_marker_size: 14
+    candidate_alpha: 0.25
+
+    # Selected sites
+    selected_marker_size: 180
+
+    # Road graph layer
+    draw_road_graph: true
+    max_edges_on_map: 15000
+    road_alpha: 0.22
+    road_linewidth: 0.30
+
+    # Optional OSM basemap. Requires contextily and internet/cache.
+    # For reproducible paper plots, false is recommended.
+    use_basemap: false
+    basemap_provider: OpenStreetMap.Mapnik
+
+    map_padding_fraction: 0.04

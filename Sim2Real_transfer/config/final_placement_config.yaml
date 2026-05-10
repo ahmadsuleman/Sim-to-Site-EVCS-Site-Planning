@@ -1,0 +1,30 @@
+seed: 42
+mode: real
+method_id: M5_synthetic_to_hybrid_topM_milp
+shortlist_size: 40
+k: 10
+
+map_balance:
+  grid_rows: 4
+  grid_cols: 4
+  min_active_zones_fraction_of_k: 0.60
+  max_per_zone: 2
+  min_separation_km: 1.5
+  allow_relaxation: true
+
+scoring:
+  # Final placement score combines learned/KPI ranking with map-derived demand and feasibility.
+  rank_weight: 0.45
+  local_demand_weight: 0.25
+  suitability_weight: 0.15
+  equity_weight: 0.10
+  cost_efficiency_weight: 0.05
+  demand_kernel_km: 2.0
+
+plots:
+  dpi: 350
+  max_road_edges: 12000
+  max_demand_points: 5000
+  show_grid: true
+  label_selected_sites: true
+  figure_format: [png, pdf]
