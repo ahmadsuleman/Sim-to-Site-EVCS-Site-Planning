@@ -499,16 +499,14 @@ python run_experiment.py \
 
 ---
 
-## Citation
-
-If you use this software in a paper, cite the corresponding dataset-generation and simulator-to-real optimization study.
+If you use this framework, dataset generator, or experimental pipeline in your research, please cite:
 
 ```bibtex
-@software{evcs_sim2real_planning_suite,
-  title  = {EVCS Sim-to-Real Planning Suite},
-  author = {Your Name},
-  year   = {2026},
-  note   = {Graph-structured EV charging dataset generation and simulator-to-real transfer optimization}
+@misc{khan2026simtosite,
+  title        = {Sim-to-Site: A Data-Fidelity-Aware Sim-to-Real Planning Framework for Graph-Based EVCS Placement},
+  author       = {Khan, Ajmal and Suleman, Ahmad},
+  year         = {2026},
+  note         = {Manuscript under preparation}
 }
 ```
 
