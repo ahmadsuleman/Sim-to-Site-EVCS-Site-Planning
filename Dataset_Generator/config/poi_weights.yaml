@@ -1,0 +1,20 @@
+poi_weights:
+  retail: 1.00
+  mall: 1.60
+  restaurant: 0.80
+  cafe: 0.70
+  school: 0.70
+  university: 1.00
+  hospital: 1.10
+  clinic: 0.70
+  office: 0.90
+  hotel: 1.00
+  tourism: 1.00
+  mosque: 0.75
+  public_transport: 1.30
+  fuel: 1.10
+  parking: 1.20
+bonuses:
+  transit: 0.20
+  fuel: 0.15
+  parking: 0.15

@@ -1,0 +1,100 @@
+cities:
+  - city_id: sau_riyadh
+    name: Riyadh
+    country: Saudi Arabia
+    osm_place: "Riyadh, Saudi Arabia"
+    lat: 24.7136
+    lon: 46.6753
+    bbox_km: 34
+    city_archetype: capital_inland
+    mode_enabled: ["synthetic", "real", "hybrid"]
+
+  - city_id: sau_jeddah
+    name: Jeddah
+    country: Saudi Arabia
+    osm_place: "Jeddah, Saudi Arabia"
+    lat: 21.4858
+    lon: 39.1925
+    bbox_km: 28
+    city_archetype: coastal_port
+    mode_enabled: ["synthetic", "real", "hybrid"]
+
+  - city_id: sau_mecca
+    name: Mecca
+    country: Saudi Arabia
+    osm_place: "Mecca, Saudi Arabia"
+    lat: 21.3891
+    lon: 39.8579
+    bbox_km: 24
+    city_archetype: religious_tourism
+    mode_enabled: ["synthetic", "real", "hybrid"]
+
+  - city_id: sau_medina
+    name: Medina
+    country: Saudi Arabia
+    osm_place: "Medina, Saudi Arabia"
+    lat: 24.5247
+    lon: 39.5692
+    bbox_km: 24
+    city_archetype: religious_tourism
+    mode_enabled: ["synthetic", "real", "hybrid"]
+
+  - city_id: sau_dammam
+    name: Dammam
+    country: Saudi Arabia
+    osm_place: "Dammam, Saudi Arabia"
+    lat: 26.4207
+    lon: 50.0888
+    bbox_km: 24
+    city_archetype: coastal_industrial
+    mode_enabled: ["synthetic", "real", "hybrid"]
+
+  - city_id: sau_khobar
+    name: Khobar
+    country: Saudi Arabia
+    osm_place: "Khobar, Saudi Arabia"
+    lat: 26.2172
+    lon: 50.1971
+    bbox_km: 18
+    city_archetype: coastal_commercial
+    mode_enabled: ["synthetic", "real", "hybrid"]
+
+  - city_id: omn_muscat
+    name: Muscat
+    country: Oman
+    osm_place: "Muscat, Oman"
+    lat: 23.5880
+    lon: 58.3829
+    bbox_km: 26
+    city_archetype: coastal_capital
+    mode_enabled: ["synthetic", "real", "hybrid"]
+
+  - city_id: omn_salalah
+    name: Salalah
+    country: Oman
+    osm_place: "Salalah, Oman"
+    lat: 17.0194
+    lon: 54.0897
+    bbox_km: 20
+    city_archetype: coastal_tourism
+    mode_enabled: ["synthetic", "real", "hybrid"]
+
+  - city_id: omn_sohar
+    name: Sohar
+    country: Oman
+    osm_place: "Sohar, Oman"
+    lat: 24.3475
+    lon: 56.7075
+    bbox_km: 20
+    city_archetype: coastal_industrial
+    mode_enabled: ["synthetic", "real", "hybrid"]
+
+  - city_id: omn_nizwa
+    name: Nizwa
+    country: Oman
+    osm_place: "Nizwa, Oman"
+    lat: 22.9333
+    lon: 57.5333
+    bbox_km: 16
+    city_archetype: inland_medium_density
+    mode_enabled: ["synthetic", "real", "hybrid"]

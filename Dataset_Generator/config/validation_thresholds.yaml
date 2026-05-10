@@ -1,0 +1,11 @@
+thresholds:
+  largest_connected_component_ratio_min: 0.90
+  average_degree_min: 2.0
+  average_degree_max: 5.0
+  missing_edge_length_percent_max: 0.0
+  minimum_candidate_count: 25
+  normalized_feature_min: 0.0
+  normalized_feature_max: 1.0
+  zero_variance_epsilon: 0.000001
+  correlation_min_positive: 0.05
+  correlation_max_negative_or_weak: 0.20

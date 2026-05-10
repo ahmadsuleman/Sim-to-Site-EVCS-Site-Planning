@@ -1,0 +1,72 @@
+# Values are normalized to [0, 1]. Confidence describes expected realism of the sampled value.
+grid_access_score:
+  commercial: {low: 0.55, high: 0.90, confidence: 0.55}
+  residential: {low: 0.35, high: 0.75, confidence: 0.45}
+  industrial: {low: 0.50, high: 0.85, confidence: 0.50}
+  transit: {low: 0.45, high: 0.80, confidence: 0.50}
+  tourism: {low: 0.40, high: 0.78, confidence: 0.45}
+  religious: {low: 0.45, high: 0.82, confidence: 0.45}
+  mixed: {low: 0.45, high: 0.82, confidence: 0.45}
+  public: {low: 0.40, high: 0.80, confidence: 0.45}
+  highway: {low: 0.40, high: 0.78, confidence: 0.50}
+  open_space: {low: 0.20, high: 0.55, confidence: 0.35}
+
+available_space:
+  commercial: {low: 0.35, high: 0.75, confidence: 0.60}
+  residential: {low: 0.20, high: 0.65, confidence: 0.45}
+  industrial: {low: 0.55, high: 0.90, confidence: 0.65}
+  transit: {low: 0.30, high: 0.70, confidence: 0.55}
+  tourism: {low: 0.30, high: 0.70, confidence: 0.50}
+  religious: {low: 0.25, high: 0.65, confidence: 0.45}
+  mixed: {low: 0.25, high: 0.70, confidence: 0.45}
+  public: {low: 0.35, high: 0.75, confidence: 0.55}
+  highway: {low: 0.45, high: 0.85, confidence: 0.55}
+  open_space: {low: 0.50, high: 0.90, confidence: 0.40}
+
+population_density:
+  commercial: {low: 0.30, high: 0.70, confidence: 0.40}
+  residential: {low: 0.45, high: 0.95, confidence: 0.45}
+  industrial: {low: 0.10, high: 0.45, confidence: 0.40}
+  transit: {low: 0.25, high: 0.70, confidence: 0.35}
+  tourism: {low: 0.20, high: 0.65, confidence: 0.35}
+  religious: {low: 0.35, high: 0.85, confidence: 0.35}
+  mixed: {low: 0.35, high: 0.85, confidence: 0.40}
+  public: {low: 0.20, high: 0.60, confidence: 0.35}
+  highway: {low: 0.05, high: 0.30, confidence: 0.35}
+  open_space: {low: 0.02, high: 0.25, confidence: 0.30}
+
+parking_dwell_score:
+  commercial: {low: 0.45, high: 0.90, confidence: 0.55}
+  residential: {low: 0.20, high: 0.60, confidence: 0.45}
+  industrial: {low: 0.35, high: 0.75, confidence: 0.50}
+  transit: {low: 0.45, high: 0.85, confidence: 0.50}
+  tourism: {low: 0.45, high: 0.90, confidence: 0.50}
+  religious: {low: 0.35, high: 0.85, confidence: 0.45}
+  mixed: {low: 0.30, high: 0.80, confidence: 0.45}
+  public: {low: 0.30, high: 0.75, confidence: 0.45}
+  highway: {low: 0.35, high: 0.80, confidence: 0.45}
+  open_space: {low: 0.10, high: 0.45, confidence: 0.30}
+
+activity_intensity:
+  commercial: {low: 0.55, high: 1.00, confidence: 0.45}
+  residential: {low: 0.25, high: 0.65, confidence: 0.40}
+  industrial: {low: 0.20, high: 0.60, confidence: 0.40}
+  transit: {low: 0.45, high: 0.90, confidence: 0.40}
+  tourism: {low: 0.45, high: 0.95, confidence: 0.40}
+  religious: {low: 0.40, high: 0.95, confidence: 0.40}
+  mixed: {low: 0.35, high: 0.85, confidence: 0.40}
+  public: {low: 0.25, high: 0.70, confidence: 0.35}
+  highway: {low: 0.15, high: 0.55, confidence: 0.35}
+  open_space: {low: 0.05, high: 0.35, confidence: 0.30}
+
+nearby_charger_pressure:
+  commercial: {low: 0.10, high: 0.65, confidence: 0.40}
+  residential: {low: 0.02, high: 0.35, confidence: 0.35}
+  industrial: {low: 0.02, high: 0.30, confidence: 0.35}
+  transit: {low: 0.05, high: 0.50, confidence: 0.35}
+  tourism: {low: 0.05, high: 0.50, confidence: 0.35}
+  religious: {low: 0.03, high: 0.45, confidence: 0.35}
+  mixed: {low: 0.05, high: 0.50, confidence: 0.35}
+  public: {low: 0.02, high: 0.35, confidence: 0.35}
+  highway: {low: 0.05, high: 0.45, confidence: 0.35}
+  open_space: {low: 0.00, high: 0.20, confidence: 0.30}

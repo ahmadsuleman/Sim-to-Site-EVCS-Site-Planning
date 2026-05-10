@@ -1,0 +1,20 @@
+defaults:
+  synthetic_node_count: 324
+  synthetic_candidate_min: 35
+  synthetic_candidate_max: 140
+  real_network_type: drive
+  real_simplify: true
+  real_retain_all: true
+  real_truncate_by_edge: true
+  real_max_nodes: 2500
+  real_connectivity_cleaning: true
+  allow_real_fallback: false
+  output_plots: true
+  export_graphml: true
+  export_gpkg_if_available: true
+  candidate_quantile_threshold: 0.72
+  demand_quantile_threshold: 0.60
+  normalize_all_scores: true
+  country_code_by_country:
+    Saudi Arabia: SA
+    Oman: OM
